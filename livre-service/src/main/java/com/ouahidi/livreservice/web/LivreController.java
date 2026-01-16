@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
+
 public class LivreController {
 
     public LivreController(LivreRepository livreRepository, ConfigGlobal configGlobal, ConfigLocal configLocal) {
@@ -28,10 +29,6 @@ public class LivreController {
 
 
 
-
-
-
-
     @GetMapping("/livres")
     public List<Livre> getLivres() {
         return livreRepository.findAll();
@@ -43,17 +40,15 @@ public class LivreController {
 
 }
 
-@GetMapping("/livres/configGlobal")
+@GetMapping("/livres/global")
     public ConfigGlobal getConfigGlobal() {
         return configGlobal;
 
 }
-
-@GetMapping("/livres/configLocal")
-    public ConfigLocal  getConfigLocal() {
+ @GetMapping("/livres/local")
+    public ConfigLocal getConfigLocal() {
         return configLocal;
-
-    }
+ }
 
 }
 
